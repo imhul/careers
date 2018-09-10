@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { TaskList } from '../TaskList';
-import { Filter } from '../Filter';
-import { Form } from '../Form';
+import { TaskList } from '../../TaskList';
+import { Filter } from '../../Filter';
+import { Form } from '../../Form';
 
-import { store } from "../../store/reducers/rootReducer";
+import { store } from "../../../store/reducers/rootReducer";
+
+import './style'
 
 class Careers extends Component {
     constructor(props){
@@ -14,7 +16,7 @@ class Careers extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Careers">
                 <Link to="/job">More</Link>
                 <TaskList data={store.getState()} />
                 <Filter />

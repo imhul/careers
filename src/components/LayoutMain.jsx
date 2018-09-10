@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 import { Layout } from 'antd';
-// components
 import Careers from './Pages/Careers';
 import Job from './Pages/Job';
 
-const { Content } = Layout;
+const { Content, Header, Footer } = Layout;
 
 class LayoutMain extends Component {
     render() {
@@ -14,17 +13,22 @@ class LayoutMain extends Component {
         )}
         return (
             <Layout className="LayoutMain">
+                <Header>
+                    <div className="menu"></div>
+                    <div className="subline"></div>
+                </Header>
 
-                <Layout className="Main">
-                    <Content>
-                        <Switch>
-                            <Route exact path="/careers" component={Careers} />
-                            <Route path="/job" component={Job} />
-                            <Route component={NotFound} />
-                        </Switch>
-                    </Content>
-                </Layout>
+                <Content>
+                    <Switch>
+                        <Route exact path="/careers" component={Careers} />
+                        <Route path="/job" component={Job} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </Content>
 
+                <Footer>
+
+                </Footer>
             </Layout>
         );
     }
