@@ -14,20 +14,35 @@ class LayoutMain extends Component {
         return (
             <Layout className="LayoutMain">
                 <Header>
-                    <div className="menu"></div>
-                    <div className="subline"></div>
+                    <div className="container">
+                        <div className="logo">
+                            <a href="#">
+                                <span className="icons-logo"></span>
+                                <span className="logo-text icons">
+                                    
+                                </span>
+                            </a>
+                        </div>
+                        <div className="menu"></div>
+                        <div className="search"></div>
+                    </div>
+                    <div className="subline">
+                        <div className="container"></div>
+                    </div>
                 </Header>
 
                 <Content>
-                    <Switch>
-                        <Route exact path="/careers" component={Careers} />
-                        <Route path="/job" component={Job} />
-                        <Route component={NotFound} />
-                    </Switch>
+                    <div className="container">
+                        <Switch>
+                            <Route exact path="/careers" component={Careers} />
+                            <Route path="/job" component={Job} />
+                            <Route component={NotFound} />
+                        </Switch>
+                    </div>
                 </Content>
 
                 <Footer>
-
+                    <div className="container"></div>
                 </Footer>
             </Layout>
         );

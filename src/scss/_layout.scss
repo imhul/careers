@@ -1,18 +1,79 @@
+/* Common layout */
 body {
     background: $color-bg;
     #root {
         .LayoutMain {
-            .ant-layout-header {
-                background: $color-header-bg;
-                color: $color-white;
+            .container {
+                max-width: 1470px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 16px;
             }
+            /* Header */
+            .ant-layout-header {
+                background: $color-dark;
+                color: $color-white;
+                padding: 0;
+                height: 80px;
+                margin-bottom: 10px;
+                box-shadow: 0 1px 3px $color-header-bg;
+                text-align: center;
+                position: relative;
+                .logo {
+                    a {
+                        display: inline-block;
+                        position: relative;
+                        z-index: 1001;
+                        height: 100%;
+                        width: 154px;
+                        float: left;
+                        padding-top: 0;
+                        .icons-logo {
+                            font-size: 36px;
+                            color: #67A14B;
+                            @media (min-width: 1024px) {
+                                display: block;
+                            }
+                        }
+                        .logo-text {
+                            background: url(../images/logo.svg) center no-repeat;
+                            background-size: cover;
+                            width: 150px;
+                            height: 40px;
+                            display: inline-block;
+                        }
+                    }
+                }
+                .menu {
+                    height: 64px;
+                    padding: 0 50px;
+                    line-height: 64px;
+                }
+                .search {
+
+                }
+                .subline {
+                    background: $color-header-bg;
+                    height: 16px;
+                    padding: 0 50px;
+                    line-height: 16px;
+                }
+            }
+            /* Content */
             .ant-layout-content {
+                min-height: calc(100vh - 320px);
                 background: $color-bg;
                 color: $color-dark;
             }
+            /* Footer */
             .ant-layout-footer {
-                background: $color-footer-bg;
+                background: $color-dark;
                 color: $color-white;
+                min-height: 230px;
+                /* Footer - Menu */
+                .menu {
+
+                }
             }
         }
     }
