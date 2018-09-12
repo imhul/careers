@@ -17,14 +17,19 @@ class LayoutMain extends Component {
                     <div className="container">
                         <div className="logo">
                             <a href="#">
-                                <span className="icons-logo"></span>
-                                <span className="logo-text icons">
-                                    
-                                </span>
+                                <span className="icon-logo1"></span>
+                                <span className="icon-logo"></span>
                             </a>
                         </div>
                         <div className="menu"></div>
-                        <div className="search"></div>
+                        <div className="search">
+                            <form action="/search">
+                                <input type="text" name="q" placeholder="Search..." />
+                                <button type="submit">
+                                    <span class="icon icon-search"></span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                     <div className="subline">
                         <div className="container"></div>
