@@ -1,14 +1,14 @@
 export const testData = {
-    tasks: [
+    careers: [
         {
-            title: "Task 1",
-            projectName: "Project One",
+            title: "Career 1",
+            careerName: "Career One",
             priority: 1,
             key: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
         }, {
-            title: "Task 2",
-            projectName: "Project Two",
+            title: "Career 2",
+            careerName: "Career Two",
             priority: 2,
             key: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
@@ -16,11 +16,7 @@ export const testData = {
     ],
     filter: {
         byPriority: false,
-        byProjectName: ""
+        byCareerName: ""
     },
-    formType: {
-        type: "", //new, edit, ""
-    },
-    projectNamesSelect: [],
-    editFormValues: {}
+    careerNamesSelect: [],
 }

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { store } from "../store/reducers/rootReducer";
+import { store } from "../../../store/reducers/rootReducer";
 
-import { initialState } from "../store/initialState";
-import { addProjectNameToSelectAction } from "../store/actions/addProjectNameToSelectAction";
-import { projectNameFilterAction } from "../store/actions/projectNameFilterAction";
+import { initialState } from "../../../store/initialState";
+import { addCareerNameToSelectAction } from "../../../store/actions/addCareerNameToSelectAction";
+import { careerNameFilterAction } from "../../../store/actions/careerNameFilterAction";
 
-initialState.projectNamesSelect.forEach((item) => {
-    store.dispatch(addProjectNameToSelectAction(item))
+initialState.careerNamesSelect.forEach((item) => {
+    store.dispatch(addCareerNameToSelectAction(item))
 })
 
 
-export class ProjNamesSelect extends Component {
+class CareerNamesSelect extends Component {
 
     constructor(props){
         super(props);
@@ -21,15 +21,15 @@ export class ProjNamesSelect extends Component {
             }
         } else {
             this.state = {
-                namesList: store.getState().projectNamesSelect
+                namesList: store.getState().careerNamesSelect
             }
         }
         // this.state = (this.props.namesList.length) ? {namesList: this.props.namesList} :
-        //     {namesList: store.getState().projectNamesSelect}
+        //     {namesList: store.getState().careerNamesSelect}
     }
 
     filtered(value){
-        store.dispatch(projectNameFilterAction(value));
+        store.dispatch(careerNameFilterAction(value));
     }
 
     componentWillReceiveProps(newProps){
@@ -44,3 +44,5 @@ export class ProjNamesSelect extends Component {
         </select>
     }
 }
+
+export default CareerNamesSelect

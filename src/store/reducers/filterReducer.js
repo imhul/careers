@@ -5,9 +5,9 @@ export function filterReducer(state = {}, action){
                ...state, byPriority: action.payload
             };
 
-        case 'PROJECT_NAME_FILTER':
+        case 'CAREER_NAME_FILTER':
             return {
-               ...state, byProjectName: action.payload
+               ...state, byCareerName: action.payload
             };
     }
 

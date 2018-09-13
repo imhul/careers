@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
+import history from '../history';
 import { Layout } from 'antd';
 import Careers from './Pages/Careers';
 import Job from './Pages/Job';
@@ -16,7 +17,7 @@ class LayoutMain extends Component {
                 <Header>
                     <div className="container">
                         <div className="logo">
-                            <a href="#">
+                            <a href="/">
                                 <span className="icon-logo1"></span>
                                 <span className="icon-logo"></span>
                             </a>
@@ -26,7 +27,7 @@ class LayoutMain extends Component {
                             <form action="/search">
                                 <input type="text" name="q" placeholder="Search..." />
                                 <button type="submit">
-                                    <span class="icon icon-search"></span>
+                                    <span className="icon icon-search"></span>
                                 </button>
                             </form>
                         </div>
@@ -38,12 +39,23 @@ class LayoutMain extends Component {
 
                 <Content>
                     <div className="container">
+                        <ol className="breadcrumbs">
+                            <li>
+                                <a href="/">home</a>
+                            </li>
+                            {history.location.pathname !== '/' ? <li>
+                                <span>
+                                    {history.location.pathname.slice(1)}
+                                </span>
+                            </li> : null }
+                        </ol>
                         <Switch>
                             <Route exact path="/careers" component={Careers} />
                             <Route path="/job" component={Job} />
                             <Route component={NotFound} />
                         </Switch>
                     </div>
+                    <div className="content-bottom"></div>
                 </Content>
 
                 <Footer>

@@ -1,3 +1,23 @@
 .Careers {
-    
+    .content {
+        position: relative;
+        width: 75%;
+        @media (max-width: 1200px) {
+            width: 66.666%;
+        }
+    }
+    .aside-container {
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 25%;
+        background: #efeedd;
+        @media (max-width: 1200px) {
+            width: 33.333%;
+        }
+        aside {
+            width: 100%;
+        }
+    }
 } 

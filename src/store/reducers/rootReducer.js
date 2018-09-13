@@ -1,17 +1,13 @@
 import { createStore, combineReducers } from 'redux';
 
 import { filterReducer } from './filterReducer';
-import { projectNamesSelectReducer } from './projectNamesSelectReducer';
-import { formTypeReducer } from './formTypeReducer';
-import { taskReducer } from "./taskReducer";
-import { taskEditerDataReducer } from "./taskEditerDataReducer";
+import { careerNamesSelectReducer } from './careerNamesSelectReducer';
+import { careerReducer } from "./careerReducer";
 
 const rootReducer = combineReducers({
     filter: filterReducer,
-    projectNamesSelect: projectNamesSelectReducer,
-    formType: formTypeReducer,
-    tasks: taskReducer,
-    editFormValues: taskEditerDataReducer
+    careerNamesSelect: careerNamesSelectReducer,
+    careers: careerReducer,
 })
 
 export const store = createStore(rootReducer);

@@ -123,8 +123,8 @@ body {
                         }
                         button {
                             position: absolute;
-                            left: 0;
-                            top: 16px;
+                            left: 5px;
+                            top: 8px;
                             background: 0 0;
                             border: 0;
                             span {
@@ -147,6 +147,64 @@ body {
                 min-height: calc(100vh - 320px);
                 background: $color-bg;
                 color: $color-dark;
+                .container {
+                    width: 1600px;
+                    max-width: 100%;
+                    padding: 0 65px;
+                    margin-bottom: 30px;
+                    @media (max-width: 1160px) {
+                        padding-left: 45px;
+                        padding-right: 45px;
+                        width: 964px;
+                    }
+                    @media (max-width: 1280px) {
+                        padding-left: 45px;
+                        padding-right: 45px;
+                    }
+                    @media (max-width: 1470px) {
+                        width: 1300px;
+                    }
+                }
+                .content-bottom {
+                    height: 222px !important;
+                    background: $color-aside-bg;
+                    @media (max-width: 1469px) {
+                        height: 184px !important;
+                    }
+                }
+                .breadcrumbs {
+                    display: none;
+                    padding: 14px 0 10px;
+                    font-size: 14px;
+                    list-style: none;
+                    margin: 0;
+                    @media (min-width: 1024px) {
+                        display: block;
+                    }
+                    li {
+                        display: inline-block !important;
+                        transition: all .1s ease;
+                        padding-right: 16px;
+                        position: relative;
+                        &:last-child:before {
+                            display: none;
+                        }
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            display: block;
+                            border-top: 3px solid $color-transparent;
+                            border-bottom: 3px solid $color-transparent;
+                            border-left: 3px solid $color-button-success;
+                            right: 6px;
+                            top: 9px;
+                        }
+                        a, span {
+                            color: $color-button-success;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
             }
             /* Footer */
             .ant-layout-footer {
