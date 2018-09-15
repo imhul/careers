@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 
-import { store } from "../../../store/reducers/rootReducer";
+import store from "../../../store/reducers/rootReducer";
 
 import './style'
 

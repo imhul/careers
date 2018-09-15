@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Career } from "./Career";
+import Career from "./Career";
 
 class CareerList extends Component {
     constructor(props){
@@ -40,4 +40,4 @@ class CareerList extends Component {
     }
 }
 
-export default CareerList
+export default CareerList;

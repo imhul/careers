@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { store } from "../../../store/reducers/rootReducer";
+import store from "../../../store/reducers/rootReducer";
 
-import { initialState } from "../../../store/initialState";
-import { addCareerNameToSelectAction } from "../../../store/actions/addCareerNameToSelectAction";
-import { careerNameFilterAction } from "../../../store/actions/careerNameFilterAction";
+import initialState from "../../../store/initialState";
+import addCareerNameToSelectAction from "../../../store/actions/addCareerNameToSelectAction";
+import careerNameFilterAction from "../../../store/actions/careerNameFilterAction";
 
 initialState.careerNamesSelect.forEach((item) => {
     store.dispatch(addCareerNameToSelectAction(item))
@@ -45,4 +45,4 @@ class CareerNamesSelect extends Component {
     }
 }
 
-export default CareerNamesSelect
+export default CareerNamesSelect;

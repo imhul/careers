@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-import { CareerList } from './CareerList';
-import { Filter } from './Filter';
-
-import { store } from "../../../store/reducers/rootReducer";
-
+import CareerList from './CareerList';
+import Filter from './Filter';
+import store from "../../../store/reducers/rootReducer";
 import './style'
 
 class Careers extends Component {
@@ -32,5 +29,5 @@ class Careers extends Component {
     }
 }
 
-export default Careers
+export default Careers;
 

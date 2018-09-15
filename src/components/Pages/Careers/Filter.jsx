@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
-import { store } from "../../../store/reducers/rootReducer";
+import store from "../../../store/reducers/rootReducer";
 import CareerNamesSelect from "./Filter--CareerNamesSelect";
 
 class Filter extends Component {
@@ -13,4 +13,4 @@ class Filter extends Component {
     }
 }
 
-export default Filter
+export default Filter;

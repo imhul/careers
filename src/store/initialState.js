@@ -19,4 +19,4 @@ let getSavedState = function(){
 
 let initialState = getSavedState() || exampleState;
 
-export { initialState };
+export default initialState;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { store } from "../../../store/reducers/rootReducer";
-import { closeCareerAction } from "../../../store/actions/closeCareerAction";
-import { removeCareerNameFromSelectAction } from "../../../store/actions/removeCareerNameFromSelectAction";
+import store from "../../../store/reducers/rootReducer";
+import closeCareerAction from "../../../store/actions/closeCareerAction";
+import removeCareerNameFromSelectAction from "../../../store/actions/removeCareerNameFromSelectAction";
 
 class Career extends Component {
 

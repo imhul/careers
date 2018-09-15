@@ -1,5 +1,4 @@
 import { createStore, combineReducers } from 'redux';
-
 import { filterReducer } from './filterReducer';
 import { careerNamesSelectReducer } from './careerNamesSelectReducer';
 import { careerReducer } from "./careerReducer";
@@ -10,8 +9,7 @@ const rootReducer = combineReducers({
     careers: careerReducer,
 })
 
-export const store = createStore(rootReducer);
-
+const store = createStore(rootReducer);
 
 let setLocalStore = function () {
 
@@ -21,3 +19,5 @@ let setLocalStore = function () {
 }
 
 setLocalStore();
+
+export default store;
