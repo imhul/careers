@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-
-import store from "../../../store/reducers/rootReducer";
-
-import './style'
+// import store from "../../../store/reducers/rootReducer";
 
 class Job extends Component {
     constructor(props){
@@ -17,11 +14,9 @@ class Job extends Component {
                 <Link to="/careers">
                     <Button>Back to list</Button>
                 </Link>
-                
-                { store.getState().formType.type == 'new' && <Form /> }
             </div>
         )
     }
 }
 
-export default Job
+export default Job;

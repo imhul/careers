@@ -1,0 +1,50 @@
+.Careers {
+    position: relative;
+    .content {
+        position: relative;
+        padding-right: $gutter-24;
+        width: 75%;
+        @media (max-width: 1200px) {
+            width: 66.666%;
+        }
+        select {
+            width: 100%;
+        }
+        .filter-container {
+            h1 {
+                width: 50%;
+                display: inline-block;
+                text-align: left;
+            }
+            .filter {
+                width: 50%;
+                display: inline-block;
+                text-align: right;
+                color: $color-button-success;
+                select {
+                    width: 60px;
+                    opacity: 0;
+                }
+                span {
+                    position: relative;
+                    right: -55px;
+                }
+            }
+        }
+    }
+    .aside-container {
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 25%;
+        height: 100%;
+        background: $color-aside-bg;
+        @media (max-width: 1200px) {
+            width: 33.333%;
+        }
+        aside {
+            width: 100%;
+        }
+    }
+} 

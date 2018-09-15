@@ -3,6 +3,7 @@ body {
     background: $color-bg;
     #root {
         .LayoutMain {
+            background: $color-bg;
             .container {
                 max-width: 1470px;
                 width: 100%;
@@ -145,7 +146,6 @@ body {
             /* Content */
             .ant-layout-content {
                 min-height: calc(100vh - 320px);
-                background: $color-bg;
                 color: $color-dark;
                 .container {
                     width: 1600px;

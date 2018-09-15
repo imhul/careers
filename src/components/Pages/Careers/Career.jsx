@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
-import store from "../../../store/reducers/rootReducer";
-import closeCareerAction from "../../../store/actions/closeCareerAction";
-import removeCareerNameFromSelectAction from "../../../store/actions/removeCareerNameFromSelectAction";
+import { Link } from 'react-router-dom';
+// import store from "../../../store/reducers/rootReducer";
+// import closeCareerAction from "../../../store/actions/closeCareerAction";
+// import removeCareerNameFromSelectAction from "../../../store/actions/removeCareerNameFromSelectAction";
 
 class Career extends Component {
 
@@ -14,10 +14,12 @@ class Career extends Component {
         }
     }
 
-    closeCareer(key, careerName){
-        store.dispatch(closeCareerAction(key));
-        store.dispatch(removeCareerNameFromSelectAction(careerName));
-    }
+    // closeCareer(key, careerName){
+    //     store.dispatch(closeCareerAction(key));
+    //     store.dispatch(removeCareerNameFromSelectAction(careerName));
+    // }
+    // <button className="btn" onClick={ () => {this.closeCareer(key, careerName)} }>Delete</button>
+
 
     toggleDescription(){
         this.setState({
@@ -26,23 +28,39 @@ class Career extends Component {
     }
 
     render(){
-        let { key, title, careerName, description } = this.props.data;
+        let { key, title, careerName, intro, description } = this.props.data;
 
-        return <section  key={key}>
-            <h2 className="title">{title}</h2>
-            <div className="info">
-                <div className="career">Career: <span className="name">{careerName}</span></div>
+        return (
+            <section key={key}>
+
+                <h2 className="title">{title}</h2>
+
+                <div className="info">
+                    <div className="career">
+                        Career: 
+                        <span className="name">
+                            {careerName}
+                        </span>
+                    </div>
+                </div>
+
+                <div className="intro" onClick={ () => { this.toggleDescription() } }>
+                    {intro}
+                    <div className="description">
+                    { ( this.state.isDescrOpen ) ? ( <div> { description } <Link to="/job">More</Link> </div> ) : "" }
+                        
+                    </div>
+
+                    <div className="more-less">
+                            { ( !this.state.isDescrOpen ) ? "open" : "close" }
+                    </div>
+                </div>
+
                 
-            </div>
-            <div className="description">{ (this.state.isDescrOpen) ? description : "" }</div>
-            <div className="btns-wrap">
-                <button className="btn" onClick={ () => {this.closeCareer(key, careerName)} }>Close</button>
-                <button className="btn" onClick={ () => {this.toggleDescription()} }>
-                    { (!this.state.isDescrOpen) ? "Open" : "Close" }
-                </button>
-            </div>
-        </section>
+
+            </section>
+        )
     }
 }
 
-export default Career
+export default Career;

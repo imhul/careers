@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import store from "../../../store/reducers/rootReducer";
-
 import initialState from "../../../store/initialState";
 import addCareerNameToSelectAction from "../../../store/actions/addCareerNameToSelectAction";
 import careerNameFilterAction from "../../../store/actions/careerNameFilterAction";
@@ -36,12 +35,14 @@ class CareerNamesSelect extends Component {
         this.setState(newProps)
     }
 
-    render(){
-        return <select className="select" onChange={(e)=> {this.filtered(e.target.value)}}>
-            {this.state.namesList.map((item, index) => {
-                return <option value={item} key={`${index-56489461}`}>{item}</option>
-            })}
-        </select>
+    render() {
+        return (
+            <select className="select" onChange={(e)=> {this.filtered(e.target.value)}}>
+                {this.state.namesList.map((item, index) => {
+                    return <option value={item} key={`${index-56489461}`}>{item}</option>
+                })}
+            </select>
+        )
     }
 }
 
