@@ -5,9 +5,12 @@ import initialState from "../../../store/initialState";
 import addCareerGeoToSelectAction from "../../../store/actions/addCareerGeoToSelectAction";
 import careerGeoFilterAction from "../../../store/actions/careerGeoFilterAction";
 
-initialState.careerGeoSelect.forEach((item) => {
+console.log("::::initialState::::", initialState);
+
+initialState.locations.forEach((item) => {
     store.dispatch(addCareerGeoToSelectAction(item))
-})
+});
+
 
 
 class CareerGeoSelect extends Component {
@@ -15,13 +18,15 @@ class CareerGeoSelect extends Component {
     constructor(props){
         super(props);
 
-        if (this.props.geoList.length) {
+        console.log("::::this.props::::", this.props);
+
+        if (this.props.locations.length) {
             this.state = {
-                geoList: this.props.geoList
+                locations: this.props.locations
             }
         } else {
             this.state = {
-                geoList: store.getState().careerGeoSelect
+                locations: store.getState().locations
             }
         }
     }
@@ -36,7 +41,7 @@ class CareerGeoSelect extends Component {
 
     render(){
         return <select className="select" onChange={(e)=> {this.filtered(e.target.value)}}>
-            {this.state.geoList.map((item, index) => {
+            {this.state.locations.map((item, index) => {
                 return <option value={item} key={`${index-56489461}`}>{item}</option>
             })}
         </select>

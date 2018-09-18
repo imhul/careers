@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import CareerList from './CareerList';
 import Filter from './Filter';
+import GeoFilter from './GeoFilter';
 import store from "../../../store/reducers/rootReducer";
 import img from '../../../images/intro.png';
 
@@ -14,7 +14,7 @@ class Careers extends Component {
         return (
             <div className="Careers">
                 <div className="content">
-                    <select name="test" className="test"></select>
+                    <GeoFilter />
                     <div className="filter-container">
                         <h1>Careers</h1>
                         <Filter />

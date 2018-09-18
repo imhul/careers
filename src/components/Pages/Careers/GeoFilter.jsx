@@ -6,7 +6,7 @@ class GeoFilter extends Component {
 
     render(){
         return <div className="geofilter">
-            <CareerGeoSelect namesList={ store.getState().careerGeoSelect }/>
+            <CareerGeoSelect locations={ store.getState().locations }/>
         </div>
     }
 }

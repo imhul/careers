@@ -1,8 +1,8 @@
 export function filterReducer(state = {}, action){
     switch (action.type){
-        case 'PRIORITY':
+        case 'LOCATION':
             return {
-               ...state, byPriority: action.payload
+               ...state, byLocation: action.payload
             };
 
         case 'CAREER_NAME_FILTER':
