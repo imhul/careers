@@ -7,8 +7,11 @@
         @media (max-width: 1200px) {
             width: 66.666%;
         }
-        select {
+        .select {
             width: 100%;
+        }
+        .geofilter {
+
         }
         .filter-container {
             h1 {
@@ -21,7 +24,7 @@
                 display: inline-block;
                 text-align: right;
                 color: $color-button-success;
-                select {
+                .select {
                     width: 60px;
                     opacity: 0;
                 }
@@ -30,6 +33,22 @@
                     right: -55px;
                 }
             }
+        }
+        .introduce {
+
+        }
+        .img-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            img {
+                width: 100%;
+                margin-top: -56.25%;
+            }
+        }
+        .career-list {
+            min-height: 300px;
+            min-width: 300px;
         }
     }
     .aside-container {

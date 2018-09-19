@@ -51,7 +51,7 @@ class LayoutMain extends Component {
                         </ol>
                         <Switch>
                             <Route exact path="/careers" component={Careers} />
-                            <Route path="/job" component={Job} />
+                            <Route path="/job/:id" component={Job} />
                             <Route component={NotFound} />
                         </Switch>
                     </div>
