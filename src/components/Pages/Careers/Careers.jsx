@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import initialState from '../../../store/initialState';
-import { Select } from 'antd';
+
+import { Select, Collapse } from 'antd';
 import img from '../../../images/intro.png';
 
 const items = initialState.careers;
 const careerNames = initialState.careerNamesSelect;
 const locations = initialState.locations;
 const Option = Select.Option;
+const Panel = Collapse.Panel;
 
 
 class Careers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isDescrOpen: false,
             items: initialState.careers,
-            location: "All"
+            location: "All",
+            isOpen: false
         }
         this.handleChangeLocation = this.handleChangeLocation.bind(this);
         this.handleChangeName = this.handleChangeName.bind(this);
-    }
-
-    toggleDescription() {
-        this.setState({
-            isDescrOpen: !this.state.isDescrOpen
-        })
+        this.handleCollapse = this.handleCollapse.bind(this);
+        this.setStore = this.setStore.bind(this);
     }
 
     handleChangeLocation(value, option) {
@@ -38,6 +36,18 @@ class Careers extends Component {
         this.setState({
             items: items.filter(item => item.careerName === option.props.children)
         })
+    }
+
+    handleCollapse() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        })
+    }
+
+    setStore(id, event) {
+        const target = event.target;
+        console.log("event: ", event);
+        console.log("id: ", id)
     }
 
     render() {
@@ -88,41 +98,41 @@ class Careers extends Component {
                         </div>
                     </div>
 
-                    <div className="career-list">
-
-                        {this.state.items.map(item => {
-                            return (
-                                <section key={item.key}>
+                    <Collapse onChange={ this.handleCollapse }>
+                        { this.state.items.map(item => {
+                            const head = (
+                                <div>
                                     <h2 className="title">{item.title}</h2>
                                     <div className="info">
                                         <div className="career">
-                                            Career:
-                                            <span className="name">
-                                                {item.careerName}
+                                            Career: <span className="name">
+                                                { item.careerName }
                                             </span>
                                         </div>
+                                        <div>Location: {item.location}</div>
                                     </div>
-
-                                    <div className="intro" onClick={() => { this.toggleDescription() }}>
-                                        {item.intro}
-                                        <div className="description">
-                                            {(this.state.isDescrOpen) ?
-                                                (<div> {item.description}
-                                                    <Link to={`/job/${item.key}`}>More</Link> </div>) : ""
-                                            }
-                                        </div>
-
-                                        <div className="more-less">
-                                            {(!this.state.isDescrOpen) ? "open" : "close"}
-                                        </div>
+                                    <p className="intro">
+                                        { item.intro }
+                                    </p>
+                                    <div className="more-less">
+                                        { this.state.isOpen ? "close" : "open" }
                                     </div>
-                                </section>
+                                </div>
+                            );
+                            return (
+                                <Panel key={ item.key } header={ head } showArrow={ false } bordered={ false }>
+                                    <div className="description">
+                                        <p>Description: {item.description}</p>
+                                        <Link 
+                                            to={ `/job/${item.key}` } 
+                                            className={ item.key } 
+                                            onClick={ () => this.setStore(item.key)}> More
+                                        </Link>
+                                    </div>
+                                </Panel>
                             )
-
                         })}
-
-                    </div>
-
+                    </Collapse>
                 </div>
 
                 <div className="aside-container">

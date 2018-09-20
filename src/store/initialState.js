@@ -6,8 +6,7 @@ let exampleState = {
             location: "Los Angeles",
             key: 10,
             intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
-            showDescription: false
+            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse."
         },
         {
             title: "Career 2",
@@ -15,8 +14,7 @@ let exampleState = {
             location: "New York",
             key: 11,
             intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
-            showDescription: false
+            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse."
         },
         {
             title: "Career 3",
@@ -24,8 +22,7 @@ let exampleState = {
             location: "Boston",
             key: 12,
             intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
-            showDescription: false
+            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse."
         },
         {
             title: "Career 4",
@@ -33,8 +30,7 @@ let exampleState = {
             location: "Los Angeles",
             key: 13,
             intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
-            showDescription: false
+            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse."
         },
         {
             title: "Career 5",
@@ -42,8 +38,7 @@ let exampleState = {
             location: "New York",
             key: 14,
             intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
-            showDescription: false
+            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse."
         },
         {
             title: "Career 6",
@@ -51,8 +46,7 @@ let exampleState = {
             location: "Boston",
             key: 15,
             intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse.",
-            showDescription: false
+            description: "Perferendis accusamus culpa totam exercitationem officiis nam error harum quasi quas molestiae repudiandae aperiam ipsa, beatae enim a iusto quaerat reiciendis esse."
         }
     ],
     careerNamesSelect: ["All", "Career One", "Career Two", "Career Three", "Career Four", "Career Five", "Career Six"],

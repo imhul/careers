@@ -46,9 +46,12 @@
                 margin-top: -56.25%;
             }
         }
-        .career-list {
-            min-height: 300px;
-            min-width: 300px;
+        .ant-collapse {
+            background-color: $color-transparent;
+            border: 0;
+            .ant-collapse-content {
+                background-color: $color-transparent;
+            }
         }
     }
     .aside-container {
