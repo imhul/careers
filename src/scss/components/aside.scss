@@ -1,0 +1,98 @@
+aside {
+    width: 320px;
+    background: $color-aside-bg;
+    display: inline-block;
+    min-height: 878px;
+    border-radius: 2px;
+    .content-top {
+        border-bottom: 1px solid $color-border;
+        padding: $gutter-16;
+        h2 {
+            color: $color-black;
+            font-size: $font-size-19;
+            font-weight: 700;
+        }
+        .ant-list-vertical {
+            .ant-spin-container {
+                .ant-list-item {
+                    margin-bottom: $gutter-16;
+                    border-bottom: 0;
+                    border-radius: 2px;
+                    background-color: $color-white;
+                    padding: 0;
+                    .aside-item-container {
+                        .hot-label {
+                            background-color: $color-hot;
+                            position: absolute;
+                            right: 0;
+                            top: $gutter-16;
+                            width: 50px;
+                            height: 32px;
+                            border-bottom-left-radius: $gutter-16;
+                            border-top-left-radius: $gutter-16;
+                            .icon-fire {
+                                color: $color-white;
+                                font-size: 24px;
+                                padding-left: 14px;
+                                display: block;
+                                margin-top: 4px;
+                            }
+                        }
+                        img {
+    
+                        }
+                        .text-conteiner {
+                            padding: $gutter-16;
+                            .title {
+                                font-size: $font-size-19;
+                                color: $color-black;
+                                font-weight: 700;
+                                margin-bottom: 0;
+                            }
+                            .subtitle {
+                                font-size: $font-size-16;
+                                color: $color-header-light;
+                                font-weight: 500;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    .content-bottom {
+        padding: $gutter-16 !important;
+        form {
+            // input[name=useremail] {
+            //     margin-bottom: $gutter-8;
+            // }
+            // input[name=username] {
+            //     margin-bottom: $gutter-16;
+            // }
+            .ant-input-affix-wrapper {
+                margin-bottom: $gutter-8;
+                .ant-input-prefix {
+                    &>span {
+                        color: $color-header-light;
+                        font-size: 24px;
+                    }
+                }
+                .ant-input:not(:first-child) {
+                    padding-left: 44px;
+                }
+            }
+            .ant-input-affix-wrapper:nth-child(2) {
+                margin-bottom: $gutter-16;
+            }
+            button {
+                background-color: $color-button-success;
+                color: $color-white;
+            }
+        }
+    }
+    @media all and (max-width: 1024px) {
+        display: none;
+    }
+}

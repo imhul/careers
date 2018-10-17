@@ -1,6 +1,20 @@
 /* Common layout */
 body {
-    background: $color-bg;
+    background-color: $color-bg;
+    overflow-x: hidden;
+    font-family: 'MyriadPro-Regular';
+    font-size: $font-size-16;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: $color-black;
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'MyriadPro-Bold';
+        font-size: $font-size-19;
+    }
+    button, *[type=button], *[type=submit] {
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.5);
+        border: 0;
+    }
     #root {
         .LayoutMain {
             background: $color-bg;
@@ -53,89 +67,6 @@ body {
                     padding: 0 50px;
                     line-height: 64px;
                 }
-                .search {
-                    display: flex;
-                    right: 16px;
-                    left: auto;
-                    font-size: 32px;
-                    z-index: 1005;
-                    width: auto;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    color: #fff;
-                    align-items: center;
-                    transition: width .3s ease;
-                    form {
-                        width: 0;
-                        overflow: hidden;
-                        transition: width .3s ease;
-                        @media (min-width: 1024px) {
-                                width: auto;
-                        }
-                        input {
-                            width: 195px;
-                            height: 40px;
-                            border: 0;
-                            background-color: #586E80;
-                            font-size: 19px;
-                            padding-top: 4px;
-                            padding-left: 42px;
-                            border-radius: 2px;
-                            color: #fff;
-                            transition: width .3s ease;
-                            &::-webkit-input-placeholder {
-                                color:rgba(255,255,255,.54);
-                                font-size:19px;
-                                font-family:MyriadPro-Regular,Helvetica,Arial,sans-serif
-                            }
-                            &::-moz-placeholder {
-                                color:rgba(255,255,255,.54);
-                                font-size:19px;
-                                font-family:MyriadPro-Regular,Helvetica,Arial,sans-serif
-                            }
-                            &:-ms-input-placeholder {
-                                color:rgba(255,255,255,.54);
-                                font-size:19px;
-                                font-family:MyriadPro-Regular,Helvetica,Arial,sans-serif
-                            }
-                            &:-moz-placeholder {
-                                color:rgba(255,255,255,.54);
-                                font-family:MyriadPro-Regular,Helvetica,Arial,sans-serif;
-                                font-size:19px
-                            }
-                            &:-webkit-autofill {
-                                -webkit-box-shadow:0 0 0 1000px #586E80 inset;
-                                -webkit-text-fill-color:#fff !important;
-                                background-image:none!important
-                            }
-                            @media all and (max-width: 1023px) {
-                                width:0;
-                                height:32px;
-                                font-size:16px;
-                                &::-webkit-input-placeholder{font-size:16px}
-                                &::-moz-placeholder{font-size:16px}
-                                &:-ms-input-placeholder{font-size:16px}
-                                &:-moz-placeholder{font-size:16px}
-                            }
-                            @media (max-width: 1399px) and (min-width: 1024px) {
-                                width: 160px;
-                            }
-                        }
-                        button {
-                            position: absolute;
-                            left: 5px;
-                            top: 8px;
-                            background: 0 0;
-                            border: 0;
-                            span {
-                                font-size: 32px;
-                                cursor: pointer;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
                 .subline {
                     background: $color-header-bg;
                     height: 16px;
@@ -148,7 +79,7 @@ body {
                 min-height: calc(100vh - 320px);
                 color: $color-dark;
                 .container {
-                    width: 1600px;
+                    width: 1200px;
                     max-width: 100%;
                     padding: 0 65px;
                     margin-bottom: 30px;
@@ -162,14 +93,23 @@ body {
                         padding-right: 45px;
                     }
                     @media (max-width: 1470px) {
-                        width: 1300px;
+                        width: 1200px;
                     }
                 }
                 .content-bottom {
-                    height: 222px !important;
+                    min-height: 222px !important;
+                    max-height: 395px;
                     background: $color-aside-bg;
+                    padding: 25px 50px;
                     @media (max-width: 1469px) {
-                        height: 184px !important;
+                        min-height: 184px !important;
+                    }
+                    .container {
+                        margin-bottom: 0;
+                        padding: 0;
+                        .content-bottom-title {
+                            font-weight: 700;
+                        }
                     }
                 }
                 .breadcrumbs {

@@ -4,6 +4,7 @@ import history from '../history';
 import { Layout } from 'antd';
 import Careers from './Pages/Careers';
 import Job from './Pages/Job';
+import Carousel from './Carousel';
 
 const { Content, Header, Footer } = Layout;
 
@@ -24,12 +25,12 @@ class LayoutMain extends Component {
                         </div>
                         <div className="menu"></div>
                         <div className="search">
-                            <form action="/search">
+                            {/* <form action="/search">
                                 <input type="text" name="q" placeholder="Search..." />
                                 <button type="submit">
                                     <span className="icon icon-search"></span>
                                 </button>
-                            </form>
+                            </form> */}
                         </div>
                     </div>
                     <div className="subline">
@@ -41,9 +42,9 @@ class LayoutMain extends Component {
                     <div className="container">
                         <ol className="breadcrumbs">
                             <li>
-                                <a href="/">home</a>
+                                <a href="/careers">Careers</a>
                             </li>
-                            {history.location.pathname !== '/' ? <li>
+                            {history && history.location.pathname !== '/' ? <li>
                                 <span>
                                     {history.location.pathname.slice(1)}
                                 </span>
@@ -55,7 +56,8 @@ class LayoutMain extends Component {
                             <Route component={NotFound} />
                         </Switch>
                     </div>
-                    <div className="content-bottom"></div>
+                    { history.location.pathname.slice(1, 4) === 'job' ? 
+                    <div className="content-bottom"><div className="container"><Carousel /></div></div> : null }
                 </Content>
 
                 <Footer>

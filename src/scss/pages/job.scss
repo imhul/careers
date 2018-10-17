@@ -1,3 +1,53 @@
 .Job {
-    
+    .content {
+        width: calc(100% - 344px);
+        margin-right: $gutter-24;
+        display: inline-block;
+        vertical-align: top;
+        @media all and (max-width: 1024px) {
+            margin-right: 0;
+            width: 100%;
+            display: block;
+        }
+        .content-header {
+            margin-bottom: $gutter-24;
+            .image-container {
+                position: relative;
+                overflow: hidden;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                // height: 0;
+                img {
+                    width: 100%;
+                    // margin-top: -156.25%;
+                    border: 2px solid $color-white;
+                    border-radius: 2px;
+                    position: absolute;
+                    top: 0;
+                }
+            }
+            .short-desc {
+                .title {
+                    margin-bottom: 0;
+                    font-weight: 700;
+                }
+                .department {
+                    color: $color-header-light;
+                    font-size: $font-size-16;
+                }
+                .location {
+                    font-size: $font-size-16;
+                    .icon-location {
+                        color: $color-button-success;
+                    }
+                }
+            }
+        }
+        section {
+            .description {
+                h2 {
+                    // font-size: $font-size-19;
+                }
+            }
+        }
+    }
 } 

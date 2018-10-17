@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import initialState from '../../../store/initialState';
+import { careers, careerNamesSelect, locations  } from '../../../store/initialState';
+// import baseUrl from './../../../store/baseUrl';
 
-import { Select, Collapse } from 'antd';
-import img from '../../../images/intro.png';
+import { Select, Collapse, Row, Col } from 'antd';
+import introImg from '../../../images/intro.png';
+import jobImg from '../../../images/jobs/job-thumb.png';
 
-const items = initialState.careers;
-const careerNames = initialState.careerNamesSelect;
-const locations = initialState.locations;
 const Option = Select.Option;
 const Panel = Collapse.Panel;
-
 
 class Careers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: initialState.careers,
+            careers: careers,
             location: "All",
-            isOpen: false
+            name: "All",
+            isOpen: false,
         }
         this.handleChangeLocation = this.handleChangeLocation.bind(this);
         this.handleChangeName = this.handleChangeName.bind(this);
@@ -28,14 +27,15 @@ class Careers extends Component {
 
     handleChangeLocation(value, option) {
         this.setState({
-            items: items.filter(item => item.location === option.props.children)
+            careers: careers.filter(item => item.location === option.props.children)
         });
     }
 
     handleChangeName(value, option) {
         this.setState({
-            items: items.filter(item => item.careerName === option.props.children)
-        })
+            careers: careers.filter(item => item.title === option.props.children)
+        });
+
     }
 
     handleCollapse() {
@@ -56,89 +56,112 @@ class Careers extends Component {
             <div className="Careers">
                 <div className="content">
 
-                    <div className="geofilter">
-                        <Select
-                            className="select"
-                            dropdownMatchSelectWidth={false}
-                            placeholder={this.state.location}
-                            onSelect={this.handleChangeLocation}
-                        >
-                            {locations.map((location, index) => {
-                                return (
-                                    <Option key={index}>{location}</Option>
-                                )
-                            })}
-                        </Select>
-                    </div>
+                    <Row gutter={24} type="flex" align="middle" className="content-header">
+                        <Col span={14}>
+                            <div className="img-container">
+                                <img src={introImg} alt="Careers" />
+                            </div>
+                        </Col>
+                        <Col span={10}>
+                            <div className="introduce">
+                                <h1>Careers</h1>
+                                <p className="bold">Silver Stem Fine Cannabis team welcomes you!</p>
+                                <p>Are you highly motivated, organized, tactful, and passionate about the cannabis industry? Here you can find all our current job openings and apply for the desired position.</p>
+                            </div>
+                        </Col>
+                    </Row>
 
-                    <div className="filter-container">
-                        <h1>Careers</h1>
-                        <div className="filter">
-                            <span className="icon-filter"> Filter</span>
-                            <Select
-                                className="select"
-                                dropdownMatchSelectWidth={false}
-                                showArrow={false}
-                                onSelect={this.handleChangeName}
-                            >
-                                {careerNames.map((name, index) => {
-                                    return (
-                                        <Option key={index}>{name}</Option>
-                                    )
-                                })}
-                            </Select>
-                        </div>
-                    </div>
+                    <Row gutter={24} type="flex" align="middle">
+                        <Col span={12}>
+                            <div className="geofilter">
+                                <Select
+                                    className="select"
+                                    placeholder={this.state.location}
+                                    onSelect={this.handleChangeLocation}
+                                >
+                                    {locations.map((location, index) => {
+                                        return (
+                                            <Option key={index}>{location}</Option>
+                                        )
+                                    })}
 
-                    <div className="introduce">
-                        <p className="bold">Silver Stem Fine Cannabis team welcomes you!</p>
-                        <p>Are you highly motivated, organized, tactful, and passionate about the cannabis industry? Here you can find all our current job openings and apply for the desired position.</p>
-                        <div className="img-container">
-                            <img src={img} alt="Careers" />
-                        </div>
-                    </div>
+                                </Select>
+                            </div>
+                        </Col>
+                        <Col span={12}>
+                            <div className="filter">
+                                {/* <span className="icon-filter"> Filter</span> */}
+                                <Select
+                                    className="select"
+                                    placeholder={this.state.name}
+                                    onSelect={this.handleChangeName}
+                                >
+                                    {careerNamesSelect.map((name, index) => {
+                                        return (
+                                            <Option key={index}>{name}</Option>
+                                        )
+                                    })}
+                                </Select>
+                            </div>
+                        </Col>
+                    </Row>
 
-                    <Collapse onChange={ this.handleCollapse }>
-                        { this.state.items.map(item => {
+                    <Row gutter={24} className="list-header">
+                        <Col span={20}>Job</Col>
+                        <Col span={4}>Dispensaries</Col>
+                    </Row>
+
+                    <Collapse onChange={this.handleCollapse}>
+
+                        {this.state.careers.map(item => {
+
                             const head = (
-                                <div>
-                                    <h2 className="title">{item.title}</h2>
-                                    <div className="info">
-                                        <div className="career">
-                                            Career: <span className="name">
-                                                { item.careerName }
-                                            </span>
-                                        </div>
-                                        <div>Location: {item.location}</div>
-                                    </div>
-                                    <p className="intro">
-                                        { item.intro }
-                                    </p>
-                                    <div className="more-less">
-                                        { this.state.isOpen ? "close" : "open" }
-                                    </div>
-                                </div>
+                                <Row gutter={24} type="flex" align="middle" justify="space-between">
+
+                                    <Col span={3}>
+                                        <img src={jobImg} alt={item.title} width="70" height="70" />
+                                        {/* <img src={require(`${baseUrl}src/images/${item.image}`)} /> */}
+
+                                        {/* {import(`${baseUrl}src/images/${item.image}`).then(jobImg => {
+                                            console.log("::image::", jobImg);
+
+                                             return (
+                                                <img src={`${jobImg}`} alt="" />
+                                            ) 
+                                        })}*/}
+                                    </Col>
+
+                                    <Col span={17}>
+                                        <h2 className="title">{item.title}</h2>
+                                        <h2 className="intro">{item.intro}</h2>
+                                    </Col>
+                                    
+                                    {/* <div className="more-less">
+                                        {this.state.isOpen ? "close" : "open"}
+                                    </div> */}
+
+                                    <Col span={4} className="location">{item.location}</Col>
+                                </Row>
                             );
                             return (
-                                <Panel key={ item.key } header={ head } showArrow={ false } bordered={ false }>
+                                <Panel key={item.key} header={head} showArrow={false} bordered={false}>
                                     <div className="description">
                                         <p>Description: {item.description}</p>
-                                        <Link 
-                                            to={ `/job/${item.key}` } 
-                                            className={ item.key } 
-                                            onClick={ () => this.setStore(item.key)}> More
+                                        <Link
+                                            to={`/job/${item.key}`}
+                                            className={item.key}
+                                            onClick={() => this.setStore(item.key)}> More
                                         </Link>
                                     </div>
                                 </Panel>
                             )
                         })}
                     </Collapse>
-                </div>
 
-                <div className="aside-container">
-                    <aside>
-
-                    </aside>
+                    <p>
+                        Or you can checkout open positions at 
+                        <a href="https://recruiting.paylocity.com/Recruiting/Jobs/List/1221" title="paylocity" target="_blank"> paylocity</a>
+                    </p>
                 </div>
             </div>
         )

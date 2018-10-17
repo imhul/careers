@@ -1,72 +1,67 @@
 .Careers {
     position: relative;
     .content {
-        position: relative;
-        padding-right: $gutter-24;
-        width: 75%;
-        @media (max-width: 1200px) {
-            width: 66.666%;
+        &>p {
+            margin-top: $gutter-24;
         }
         .select {
             width: 100%;
         }
-        .geofilter {
-
-        }
-        .filter-container {
-            h1 {
-                width: 50%;
-                display: inline-block;
-                text-align: left;
-            }
-            .filter {
-                width: 50%;
-                display: inline-block;
-                text-align: right;
-                color: $color-button-success;
-                .select {
-                    width: 60px;
-                    opacity: 0;
-                }
-                span {
-                    position: relative;
-                    right: -55px;
+        .content-header {
+            margin-top: -20px;
+            .introduce {
+                p {
+                    font-weight: 500;
                 }
             }
-        }
-        .introduce {
-
-        }
-        .img-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            img {
+            .img-container {
+                position: relative;
                 width: 100%;
-                margin-top: -56.25%;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                img {
+                    width: 100%;
+                    margin-top: -56.25%;
+                }
+            }
+        }
+        .list-header {
+            font-size: $font-size-19;
+            color: $color-header-light;
+            border-bottom: 1px solid $color-header-light;
+            margin: $gutter-24 0 0 0 !important;
+            .ant-col-4 {
+                padding: 0 $gutter-16;
             }
         }
         .ant-collapse {
             background-color: $color-transparent;
             border: 0;
-            .ant-collapse-content {
-                background-color: $color-transparent;
+            .ant-collapse-item {
+                &:hover {
+                    background: $color-white;
+                }
+                .ant-collapse-header {
+                    font-weight: 500;
+                    font-size: $font-size-19;
+                    padding: $gutter-16;
+                    color: $color-black;
+                    .title {
+                        margin-bottom: 5px;
+                    }
+                    .intro {
+                        margin: 0;
+                        color: $color-header-light;
+                    }
+                    .location {
+                        font-size: $font-size-16;
+                        padding-left: 0;
+                    }
+                }
+                .ant-collapse-content {
+                    background-color: $color-transparent;
+                    font-size: $font-size-19;
+                }
             }
-        }
-    }
-    .aside-container {
-        padding: 10px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 25%;
-        height: 100%;
-        background: $color-aside-bg;
-        @media (max-width: 1200px) {
-            width: 33.333%;
-        }
-        aside {
-            width: 100%;
         }
     }
 } 
