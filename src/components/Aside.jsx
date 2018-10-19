@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { specials } from '../store/initialState';
-import { List, Button, Input, Icon } from 'antd';
+import { List } from 'antd';
+import Form from './Form';
 import specialImg from '../images/jobs/job.png';
 
 const ListItem = List.Item;
@@ -29,23 +30,6 @@ function Specials(props) {
 }
 
 class Aside extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            userName: '',
-            userEmail: '',
-        };
-        this.onChangeUserName = this.onChangeUserName.bind(this);
-        this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
-    }
-
-    onChangeUserName(e) {
-        this.setState({ userName: e.target.value });
-    }
-
-    onChangeUserEmail(e) {
-        this.setState({ userEmail: e.target.value });
-    }
 
     render() {
         return (
@@ -56,30 +40,7 @@ class Aside extends Component {
                 </div>
                 <div className="content-bottom">
                     <h2>Sign up to Newsletter</h2>
-                    <form>
-                        <Input
-                            type="email"
-                            size="large"
-                            placeholder="Enter your email"
-                            value={this.state.userEmail}
-                            prefix={<span className="icon-email" />}
-                            onChange={this.onChangeUserEmail}
-                            name="useremail" />
-                        <Input
-                            type="text"
-                            size="large"
-                            placeholder="Enter your username"
-                            value={this.state.userName}
-                            prefix={<span className="icon-persona" />}
-                            onChange={this.onChangeUserName}
-                            name="username" />
-                        <Button
-                            htmlType="submit"
-                            size="large"
-                            block>
-                            Sign up
-                        </Button>
-                    </form>
+                    <Form />
                 </div>
             </aside>
         )

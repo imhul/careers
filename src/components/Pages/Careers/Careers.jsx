@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { careers, careerNamesSelect, locations  } from '../../../store/initialState';
+import { careers, careerNamesSelect, locations } from '../../../store/initialState';
 // import baseUrl from './../../../store/baseUrl';
 
 import { Select, Collapse, Row, Col } from 'antd';
@@ -57,22 +57,34 @@ class Careers extends Component {
                 <div className="content">
 
                     <Row gutter={24} type="flex" align="middle" className="content-header">
-                        <Col span={14}>
+                        <Col 
+                            xs={{ span: 24, order: 4, }} 
+                            sm={{ span: 24, order: 4, }} 
+                            md={{ span: 14, order: 1, }} 
+                            lg={{ span: 14, order: 1, }} 
+                            xl={{ span: 14, order: 1, }}>
                             <div className="img-container">
                                 <img src={introImg} alt="Careers" />
                             </div>
                         </Col>
-                        <Col span={10}>
+                        <Col 
+                            xs={{ span: 24, order: 3, }} 
+                            sm={{ span: 24, order: 3, }} 
+                            md={{ span: 10, order: 2, }} 
+                            lg={{ span: 10, order: 2, }} 
+                            xl={{ span: 10, order: 2, }}>
                             <div className="introduce">
-                                <h1>Careers</h1>
+                                <h1 className="desktop">Careers</h1>
                                 <p className="bold">Silver Stem Fine Cannabis team welcomes you!</p>
                                 <p>Are you highly motivated, organized, tactful, and passionate about the cannabis industry? Here you can find all our current job openings and apply for the desired position.</p>
                             </div>
                         </Col>
-                    </Row>
-
-                    <Row gutter={24} type="flex" align="middle">
-                        <Col span={12}>
+                        <Col 
+                            xs={{ span: 24, order: 1, }} 
+                            sm={{ span: 24, order: 1, }} 
+                            md={{ span: 12, order: 3, }} 
+                            lg={{ span: 12, order: 3, }} 
+                            xl={{ span: 12, order: 3, }}>
                             <div className="geofilter">
                                 <Select
                                     className="select"
@@ -84,12 +96,16 @@ class Careers extends Component {
                                             <Option key={index}>{location}</Option>
                                         )
                                     })}
-
                                 </Select>
                             </div>
                         </Col>
-                        <Col span={12}>
-                            <div className="filter">
+                        <Col 
+                            xs={{ span: 24, order: 2, }} 
+                            sm={{ span: 24, order: 2, }} 
+                            md={{ span: 12, order: 4, }} 
+                            lg={{ span: 12, order: 4, }} 
+                            xl={{ span: 12, order: 4, }}>
+                            <div className="filter desktop">
                                 {/* <span className="icon-filter"> Filter</span> */}
                                 <Select
                                     className="select"
@@ -103,22 +119,43 @@ class Careers extends Component {
                                     })}
                                 </Select>
                             </div>
+                            <div className="filter-container mobile">
+                                <h1>Careers</h1>
+                                <div className="filter">
+                                    <span className="icon-filter"> Filter</span>
+                                    <Select
+                                        className="select"
+                                        dropdownMatchSelectWidth={false}
+                                        showArrow={false}
+                                        onSelect={this.handleChangeName}
+                                        dropdownStyle={{
+                                            right: '20px',
+                                        }}
+                                    >
+                                        {careerNamesSelect.map((name, index) => {
+                                            return (
+                                                <Option key={index}>{name}</Option>
+                                            )
+                                        })}
+                                    </Select>
+                                </div>
+                            </div>
                         </Col>
                     </Row>
 
-                    <Row gutter={24} className="list-header">
+                    <Row gutter={24} className="list-header desktop">
                         <Col span={20}>Job</Col>
                         <Col span={4}>Dispensaries</Col>
                     </Row>
 
                     <Collapse onChange={this.handleCollapse}>
 
-                        {this.state.careers.map(item => {
+                        {this.state.careers.map((item, index) => {
 
                             const head = (
-                                <Row gutter={24} type="flex" align="middle" justify="space-between">
+                                <Row key={index} gutter={24} type="flex" align="middle" justify="space-between">
 
-                                    <Col span={3}>
+                                    <Col span={3} className="desktop">
                                         <img src={jobImg} alt={item.title} width="70" height="70" />
                                         {/* <img src={require(`${baseUrl}src/images/${item.image}`)} /> */}
 
@@ -131,16 +168,43 @@ class Careers extends Component {
                                         })}*/}
                                     </Col>
 
-                                    <Col span={17}>
+                                    <Col span={17} className="desktop">
                                         <h2 className="title">{item.title}</h2>
                                         <h2 className="intro">{item.intro}</h2>
                                     </Col>
-                                    
+
                                     {/* <div className="more-less">
                                         {this.state.isOpen ? "close" : "open"}
                                     </div> */}
 
-                                    <Col span={4} className="location">{item.location}</Col>
+                                    <Col span={24} order={1} className="mobile">
+                                        <h2 className="title">{item.title}</h2>
+                                    </Col>
+
+                                    <Col 
+                                        xs={{ span: 24, order: 2, }} 
+                                        sm={{ span: 24, order: 2, }} 
+                                        md={{ span: 4, order: 4, }} 
+                                        lg={{ span: 4, order: 4, }} 
+                                        xl={{ span: 4, order: 4, }}
+                                        className="location">
+                                        <span className="icon-location mobile" />
+                                        {item.location}
+                                    </Col>
+
+                                    <Col span={24} order={3} className="mobile">
+                                        <h2 className="intro">
+                                            {item.intro}
+                                            <div className="more-less">
+                                                {/* {this.state.isOpen ? "close" : "open"}
+                                                <span className="icon-arrow_down" style={this.state.isOpen ? {
+                                                    transform: 'rotate(0.5turn)'
+                                                } : {
+                                                    transform: 'rotate(0turn)'
+                                                } } /> */}
+                                            </div>
+                                        </h2>
+                                    </Col>
                                 </Row>
                             );
                             return (
@@ -159,7 +223,7 @@ class Careers extends Component {
                     </Collapse>
 
                     <p>
-                        Or you can checkout open positions at 
+                        Or you can checkout open positions at
                         <a href="https://recruiting.paylocity.com/Recruiting/Jobs/List/1221" title="paylocity" target="_blank"> paylocity</a>
                     </p>
                 </div>

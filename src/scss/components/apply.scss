@@ -1,4 +1,9 @@
 .Apply {
     background-color: $color-button-success;
     color: $color-white;
+    &:hover {
+        border: 0;
+        color: $color-dark;
+        background-color: $color-aside-bg;
+    }
 }

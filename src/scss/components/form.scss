@@ -1,0 +1,21 @@
+form.Form {
+    .ant-input-affix-wrapper {
+        margin-bottom: $gutter-8;
+        .ant-input-prefix {
+            &>span {
+                color: $color-header-light;
+                font-size: 24px;
+            }
+        }
+        .ant-input:not(:first-child) {
+            padding-left: 44px;
+        }
+    }
+    .ant-input-affix-wrapper:nth-child(2) {
+        margin-bottom: $gutter-16;
+    }
+    button {
+        background-color: $color-button-success;
+        color: $color-white;
+    }
+}

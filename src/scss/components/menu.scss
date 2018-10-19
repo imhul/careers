@@ -1,0 +1,116 @@
+.Menu {
+    border: 0;
+    padding: 0;
+    line-height: 64px;
+    background-color: $color-transparent;
+    @media (max-width: 1023px) {
+        order: 3;
+        & > li:not(:nth-child(2)) {
+            display: none !important;
+        }
+    }
+    & > li:nth-child(1) {
+        display: none !important;
+    }
+    
+    .ant-menu-item, 
+    .ant-menu-item-selected, 
+    .ant-menu-item-active, 
+    .ant-menu-submenu {
+        border: 0;
+        color: $color-white;
+        font-size: $font-size-19;
+        font-family: 'MyriadPro-Regular';
+        vertical-align: middle;
+        &:hover {
+            border: 0;
+            color: $color-white;
+        }
+        .title {
+            display: block;
+            color: $color-white;
+            @media (max-width: 1023px) {
+                display: none;
+            }
+        }
+        span.icon-list {
+            display: none;
+            @media (max-width: 1023px) {
+                display: block;
+                font-size: 36px;
+                z-index: 1005;
+                color: $color-white;
+                line-height: 1px;
+            }
+        }
+        .ant-menu-submenu-title {
+            padding: 0;
+            &:hover {
+                background-color: $color-transparent;
+            }
+            &:active {
+                background-color: $color-transparent;
+            }
+        }
+    }
+    .mobile {
+        display: none;
+        @media (max-width: 1023px) {
+            display: block;
+        }
+    }
+    .ant-menu-item.desktop {
+        @media (min-width: 1024px) {
+            display: inline-block !important;
+        }
+        
+        @media (max-width: 1023px) {
+            display: none;
+        }
+    }
+    .ant-menu-submenu.ant-menu-submenu-horizontal.mobile {
+        @media (max-width: 1023px) {
+            display: block !important;
+            visibility: visible !important;
+        }
+    }
+    .ant-menu-item-active {
+        .title {
+            color: $color-tooltip-bg;
+            &:hover {
+                color: $color-aside-bg;
+            }
+        }
+    }
+    .ant-menu-item-selected {
+        .title {
+            color: $color-button-success;
+        }
+    }
+}
+.ant-menu-submenu-popup {
+    .ant-menu-item {
+        background-color: $color-transparent !important;
+        padding: 0;
+        .title {
+            color: $color-dark;
+            padding: 0 16px;
+            width: 100%;
+            height: 40px;
+            display: block;
+            &:hover {
+                background-color: $color-aside-bg;
+            }
+        }
+    }
+    .ant-menu-item-selected {
+        .title {
+            background-color: $color-aside-bg;
+        }
+    }
+    .ant-menu-item-active {
+        .title {
+            background-color: $color-aside-bg;
+        }
+    }
+}

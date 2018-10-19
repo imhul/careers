@@ -1,5 +1,8 @@
 .Careers {
     position: relative;
+    @media all and (max-width: 767px) {
+        line-height: 1.1;
+    }
     .content {
         &>p {
             margin-top: $gutter-24;
@@ -12,6 +15,10 @@
             .introduce {
                 p {
                     font-weight: 500;
+                    color: $color-header-light;
+                    @media all and (max-width: 767px) {
+                        margin-bottom: 0;
+                    }
                 }
             }
             .img-container {
@@ -33,6 +40,34 @@
                 padding: 0 $gutter-16;
             }
         }
+        .geofilter {
+            @media all and (max-width: 767px) {
+                margin-top: 8px;
+            }
+        }
+        .filter-container {
+            margin-top: 16px;
+            h1 {
+                width: 50%;
+                display: inline-block;
+                text-align: left;
+                margin-bottom: 0;
+            }
+            .filter {
+                width: 50%;
+                display: inline-block;
+                text-align: right;
+                color: $color-button-success;
+                .select {
+                    width: 60px;
+                    opacity: 0;
+                }
+                span {
+                    position: relative;
+                    right: -55px;
+                }
+            }
+        }
         .ant-collapse {
             background-color: $color-transparent;
             border: 0;
@@ -40,28 +75,71 @@
                 &:hover {
                     background: $color-white;
                 }
+                @media all and (max-width: 767px) {
+                    border: 0;
+                }
                 .ant-collapse-header {
                     font-weight: 500;
                     font-size: $font-size-19;
                     padding: $gutter-16;
                     color: $color-black;
+                    @media all and (max-width: 767px) {
+                        padding: $gutter-8;
+                    }
                     .title {
                         margin-bottom: 5px;
+                        font-family: 'MyriadPro-Semibold';
                     }
                     .intro {
                         margin: 0;
                         color: $color-header-light;
+                        font-family: 'MyriadPro-Semibold';
+                        @media all and (max-width: 767px) {
+                            font-family: 'MyriadPro-Regular';
+                            font-size: $font-size-16;
+                        }
+                        .more-less {
+                            float: right;
+                            font-size: $font-size-19;
+                            color: $color-button-success;
+                        }
                     }
                     .location {
                         font-size: $font-size-16;
-                        padding-left: 0;
+                        padding-left: 16px !important;
+                        font-family: 'MyriadPro-Regular';
+                        @media all and (max-width: 767px) {
+                            padding-left: 12px !important;
+                            .icon-location {
+                                display: inline-block !important;
+                            }
+                        }
+                        & > span {
+                            color: $color-header-light;
+                        }
+                    }
+                    img {
+                        border: 2px solid $color-white;
+                        border-radius: 2px;
                     }
                 }
                 .ant-collapse-content {
                     background-color: $color-transparent;
                     font-size: $font-size-19;
+                    .description {
+                        a {
+                            font-size: $font-size-19;
+                            color: $color-button-success;
+                        }
+                    }
                 }
             }
         }
     }
 } 
+
+.ant-select-dropdown {
+    left: unset !important;
+    right: 24px !important;
+    border-radius: 2px;
+}

@@ -1,4 +1,6 @@
 .Job {
+    font-family: 'MyriadPro-Regular' !important;
+    color: $color-black;
     .content {
         width: calc(100% - 344px);
         margin-right: $gutter-24;
@@ -11,31 +13,52 @@
         }
         .content-header {
             margin-bottom: $gutter-24;
+            @media all and (max-width: 767px) {
+                margin-bottom: 0;
+            }
             .image-container {
                 position: relative;
                 overflow: hidden;
                 padding-top: 56.25%; /* 16:9 Aspect Ratio */
-                // height: 0;
+                height: 250px;
+                @media all and (max-width: 767px) {
+                    padding-top: 0;
+                    min-height: 120px;
+                    min-width: 120px;
+                }
+                @media all and (max-width: 600px) {
+                    height: 190px;
+                }
+                @media all and (max-width: 420px) {
+                    height: 140px;
+                }
                 img {
-                    width: 100%;
-                    // margin-top: -156.25%;
+                    height: auto;
+                    width: -webkit-fill-available;
                     border: 2px solid $color-white;
                     border-radius: 2px;
                     position: absolute;
-                    top: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    @media all and (max-width: 767px) {
+                        height: auto;
+                        width: -webkit-fill-available;
+                    }
                 }
             }
             .short-desc {
                 .title {
                     margin-bottom: 0;
-                    font-weight: 700;
+                    font-family: 'MyriadPro-Semibold';
                 }
                 .department {
                     color: $color-header-light;
                     font-size: $font-size-16;
+                    font-family: 'MyriadPro-Regular';
                 }
                 .location {
                     font-size: $font-size-16;
+                    font-family: 'MyriadPro-Regular';
                     .icon-location {
                         color: $color-button-success;
                     }
@@ -45,7 +68,8 @@
         section {
             .description {
                 h2 {
-                    // font-size: $font-size-19;
+                    color: $color-header-light;
+                    font-family: 'MyriadPro-Regular';
                 }
             }
         }

@@ -31,16 +31,16 @@ class Job extends Component {
                 <div className="content">
 
                     <Row gutter={24} type="flex" align="middle" className="content-header">
-                        <Col span={14}>
+                        <Col span={15} xs={{ span: 12, }}>
                             <div className="image-container">
                                 <img src={ introImg } alt={ job.title } />
                             </div>
                         </Col>
-                        <Col span={10} className="short-desc">
+                        <Col span={9} xs={{ span: 12, }} className="short-desc">
                             <h2 className="title">{job.title}</h2>
                             <h2 className="department">{ job.department }</h2>
                             <h3 className="location"><span className="icon-location" />{job.location}</h3>
-                            <Apply />
+                            <div className="desktop"><Apply /></div>
                         </Col>
                     </Row>
 
@@ -52,6 +52,7 @@ class Job extends Component {
                             <p>{job.summary}</p>
                         </div>
                     </section>
+                    <div className="mobile"><Apply /></div>
                 </div>
                 <Aside />
             </div>
