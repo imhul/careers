@@ -1,0 +1,142 @@
+/* Footer */
+
+.ant-layout-footer {
+    background: $color-dark;
+    min-height: 230px;
+    padding: $gutter-24 $gutter-16 $gutter-8;
+    @media all and (max-width: 767px) {
+        min-height: 60px;
+        height: 60px;
+        color: $color-header-light;
+        background: $color-aside-bg;
+        .button-container {
+            width: 20%;
+            height: 60px;
+            cursor: pointer;
+            line-height: 60px;
+            text-align: center;
+            display: inline-block !important;
+            vertical-align: middle;
+            border-top: 1px solid $color-border;
+            border-right: 1px solid $color-border;
+            &:last-child {
+                border-right: 0;
+            }
+            &:hover {
+                background: $color-white;
+            }
+            span {
+                line-height: 60px;
+                font-size: 32px;
+            }
+        }
+    }
+    .desktop {
+        .x-large {
+            display: block;
+            @media all and (max-width: 1200px) {
+                display: none;
+            }
+        }
+        .footer-list {
+            font-size: $font-size-19;
+            a {
+                &:hover {
+                    color: rgba(255, 255, 255, 0.54);
+                }
+            }
+            p {
+                a {
+                    color: $color-white;
+                }
+            }
+            .child {
+                font-size: $font-size-16;
+                padding-left: $gutter-16;
+            }
+            @media all and (max-width: 1200px) {
+                padding-left: 50px !important;
+            }
+        }
+        .footer-form {
+            span:nth-child(1) {
+                font-size: $font-size-19;
+                color: rgba(255, 255, 255, 0.54);
+                display: block;
+                margin-bottom: $gutter-8;
+            }
+            form {
+                input {
+                    background-color: hsla(0, 0%, 100%, .1);
+                    height: 48px;
+                    padding: 8px 0 8px 34px; // width: 240px;
+                    border-radius: 2px;
+                    border: 2px solid hsla(0, 0%, 100%, .1);
+                    font-size: 16px;
+                    text-indent: 2%;
+                    display: block;
+                }
+                button {
+                    span {
+                        font-size: $font-size-16 !important;
+                        color: $color-white !important;
+                        border-radius: 2px !important;
+                        margin-bottom: 0 !important;
+                    }
+                    &:hover {
+                        background-color: $color-button-success;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+        .footer-social {
+            font-size: $font-size-19;
+            .title {
+                color: $color-white;
+                padding-bottom: $gutter-16;
+            }
+            .email {
+                color: $color-white;
+                
+                a {
+                    color: $color-white;
+                    display: flex;
+                    align-items: center;
+                    line-height: 23px;
+                    padding-bottom: $gutter-16;
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.54);
+                    }
+                }
+                span {
+                    font-size: 24px;
+                    padding-right: $gutter-8;
+                }
+            }
+            .social {
+                a {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    margin-right: 16px;
+                    background-color: #586e80;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    float: left;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                    span {
+                        font-size: 24px;
+                        color: #fff;
+                    }
+                    &:hover {
+                        transition: all .2s ease;
+                        background-color: #445461;
+                    }
+                }
+            }
+        }
+    }
+}

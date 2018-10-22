@@ -7,10 +7,9 @@ import Menu from './Menu';
 import Job from './Pages/Job';
 import Carousel from './Carousel';
 import Breadcrumbs from './Breadcrumbs';
-import Form from './Form';
+import BottomMenu from './BottomMenu';
 
-
-const { Content, Header, Footer } = Layout;
+const { Content, Header } = Layout;
 
 class LayoutMain extends Component {
     render() {
@@ -54,41 +53,8 @@ class LayoutMain extends Component {
                     <div className="content-bottom desktop"><div className="container"><Carousel /></div></div> : null }
                 </Content>
 
-                <Footer>
-
-                    <div className="container desktop">
-                        <Row gutter={24} type="flex" align="top" justify="space-between">
-                            <Col span={4} className="footer-list">
-                                <p>Specials & Dials</p>
-                                <p>About Us</p>
-                                <p>Careers</p>
-                                <p>Sitemap</p>
-                                <p>Terms of Use</p>
-                            </Col>
-                            <Col span={4} className="footer-list">
-                                <p className="heading">Marijuana Strains</p>
-                                <p>Indica</p>
-                                <p>Sativa</p>
-                                <p>Hybrid</p>
-                            </Col>
-                            <Col span={4} className="footer-list">
-                                <p>Cannabis Concentrates</p>
-                                <p>Cannabis Topicals</p>
-                                <p>Marijuana Edibles</p>
-                                <p>Vape</p>
-                                <p>Apparel & Accessories</p>
-                            </Col>
-                            <Col span={6} className="footer-form"><Form /></Col>
-                            <Col span={6} className="footer-social">email...</Col>
-                        </Row>
-                    </div>
-
-                    <div className="button-container mobile"><span className="icon-home"></span></div>
-                    <div className="button-container mobile"><span className="icon-map"></span></div>
-                    <div className="button-container mobile"><span className="icon-logo1"></span></div>
-                    <div className="button-container mobile"><span className="icon-persona"></span></div>
-                    <div className="button-container mobile"><span className="icon-shopping_cart"></span></div>
-                </Footer>
+                <BottomMenu />
+                
             </Layout>
         );
     }

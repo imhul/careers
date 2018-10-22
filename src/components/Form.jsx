@@ -26,7 +26,7 @@ class Form extends Component {
                 <Input
                     type="email"
                     size="large"
-                    placeholder="Enter your email"
+                    placeholder="Email"
                     value={this.state.userEmail}
                     prefix={<span className="icon-email" />}
                     onChange={this.onChangeUserEmail}
@@ -34,7 +34,7 @@ class Form extends Component {
                 <Input
                     type="text"
                     size="large"
-                    placeholder="Enter your username"
+                    placeholder="Name"
                     value={this.state.userName}
                     prefix={<span className="icon-persona" />}
                     onChange={this.onChangeUserName}

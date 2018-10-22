@@ -64,6 +64,13 @@ aside {
     }
     .content-bottom {
         padding: $gutter-16 !important;
+        button {
+            border-radius: 2px;
+            &:hover {
+                background-color: $color-button-success;
+                color: $color-white;
+            }
+        }
     }
     @media all and (max-width: 1024px) {
         display: none;

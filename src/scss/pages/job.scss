@@ -11,6 +11,35 @@
             width: 100%;
             display: block;
         }
+        .geofilter {
+            .select {
+                display: block;
+                
+            }
+        }
+        .slick-slider {
+            .slick-slide {
+                .slide-container {
+                    background-color: #F4F3ED;
+                    width: 100% !important;
+                }
+            }
+            .counter {
+                text-align: right;
+                padding-right: 36px;
+                font-size: $font-size-16;
+                color: $color-header-light;
+                @media all and (max-width: 767px) {
+                    padding-right: 46px !important;
+                }
+            }
+        }
+        .back-link {
+            a {
+                color: $color-button-success;
+                font-size: $font-size-19;
+            }
+        }
         .content-header {
             margin-bottom: $gutter-24;
             @media all and (max-width: 767px) {
@@ -59,6 +88,7 @@
                 .location {
                     font-size: $font-size-16;
                     font-family: 'MyriadPro-Regular';
+                    color: $color-black;
                     .icon-location {
                         color: $color-button-success;
                     }

@@ -106,7 +106,6 @@ class Careers extends Component {
                             lg={{ span: 12, order: 4, }} 
                             xl={{ span: 12, order: 4, }}>
                             <div className="filter desktop">
-                                {/* <span className="icon-filter"> Filter</span> */}
                                 <Select
                                     className="select"
                                     placeholder={this.state.name}
@@ -173,10 +172,6 @@ class Careers extends Component {
                                         <h2 className="intro">{item.intro}</h2>
                                     </Col>
 
-                                    {/* <div className="more-less">
-                                        {this.state.isOpen ? "close" : "open"}
-                                    </div> */}
-
                                     <Col span={24} order={1} className="mobile">
                                         <h2 className="title">{item.title}</h2>
                                     </Col>
@@ -196,12 +191,12 @@ class Careers extends Component {
                                         <h2 className="intro">
                                             {item.intro}
                                             <div className="more-less">
-                                                {/* {this.state.isOpen ? "close" : "open"}
+                                                details
                                                 <span className="icon-arrow_down" style={this.state.isOpen ? {
                                                     transform: 'rotate(0.5turn)'
                                                 } : {
                                                     transform: 'rotate(0turn)'
-                                                } } /> */}
+                                                } } />
                                             </div>
                                         </h2>
                                     </Col>

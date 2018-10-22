@@ -51,11 +51,11 @@ body {
                 color: $color-white;
                 padding: 0;
                 height: 64px;
-                margin-bottom: 38px;
+                margin-bottom: $gutter-16;
                 box-shadow: 0 1px 3px $color-header-bg;
                 text-align: center;
                 position: relative;
-                @media (min-width: 1024px) {
+                @media (max-width: 1023px) {
                     margin-bottom: 24px;
                 }
                 .container {
@@ -149,62 +149,6 @@ body {
                         .content-bottom-title {
                             font-weight: 700;
                         }
-                    }
-                }
-            }
-            /* Footer */
-            .ant-layout-footer {
-                background: $color-dark;
-                color: $color-white;
-                min-height: 230px;
-                padding: $gutter-24 0;
-                @media all and (max-width: 767px) {
-                    min-height: 60px;
-                    height: 60px;
-                    color: $color-header-light;
-                    background: $color-aside-bg;
-                    .button-container {
-                        width: 20%;
-                        height: 60px;
-                        cursor: pointer;
-                        line-height: 60px;
-                        text-align: center;
-                        display: inline-block;
-                        vertical-align: middle;
-                        border-top: 1px solid $color-border;
-                        border-right: 1px solid $color-border;
-                        &:last-child {
-                            border-right: 0;
-                        }
-                        span {
-                            line-height: 60px;
-                            font-size: 32px;
-                        }
-                    }
-                }
-                .container {
-                    width: 1200px;
-                    max-width: 100%;
-                    padding: 0 65px;
-                    margin-bottom: 30px;
-                    font-size: $font-size-19;
-                    @media (max-width: 1160px) {
-                        width: 964px;
-                    }
-                    @media (max-width: 1470px) {
-                        width: 1200px;
-                        padding-left: 45px;
-                        padding-right: 45px;
-                    }
-                    @media (max-width: 767px) {
-                        padding-left: $gutter-24;
-                        padding-right: $gutter-24;
-                        width: 100%;
-                    }
-                    @media (max-width: 420px) {
-                        padding-left: $gutter-16;
-                        padding-right: $gutter-16;
-                        width: 100%;
                     }
                 }
             }

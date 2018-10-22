@@ -3,9 +3,10 @@ window.__MUI_USE_NEXT_TYPOGRAPHY_VARIANTS__ = true;
 import React, { Component } from 'react';
 import { careers } from '../store/initialState';
 import Slider from "react-slick";
+import { Icon } from 'antd';
 import jobImg from '../images/jobs/job.png';
-import chevronLeft from '../images/chevron_left.png';
-import chevronRight from '../images/chevron_right.png';
+// import chevronLeft from '../images/chevron_left.png';
+// import chevronRight from '../images/chevron_right.png';
 
 
 const imgStyles = {
@@ -14,39 +15,24 @@ const imgStyles = {
 };
 
 function NextArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
-        <img
-            src={chevronRight}
-            className={className}
-            style={{
-                ...style,
-                display: "block",
-                zIndex: 1,
-                borderRadius: 1,
-                backgroundColor: 'rgba(50, 62, 72, 0.7)'
-            }}
-            onClick={onClick}
-        />
+        <span 
+            className={`${className} icon-navigate_next`} 
+            style={{ right: 28, }} 
+            onClick={onClick} />
+
     );
 }
 
 function PrevArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
-        <img
-            src={chevronLeft}
-            className={className}
-            style={{
-                ...style,
-                display: "block",
-                zIndex: 1,
-                borderRadius: 1,
-                backgroundColor: 'rgba(50, 62, 72, 0.7)'
-            }}
-            onClick={onClick}
-        />
-    );
+        <span 
+            className={`${className} icon-navigate_prev`} 
+            style={{ left: 10, transform: 'rotate(0.5turn)' }} 
+            onClick={onClick} />
+);
 }
 
 class Carousel extends Component {
@@ -90,6 +76,7 @@ class Carousel extends Component {
                                 <div className="title-container">
                                     <h2 className="title">{item.title}</h2>
                                     <h2 className="location">{item.location}</h2>
+                                    
                                 </div>
                             </div>
                         )
